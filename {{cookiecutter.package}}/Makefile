@@ -4,7 +4,7 @@ all: update build install test requirements notebook
 
 install-poetry :
 	pip install --upgrade pip
-	pip install poetry
+	pip install --upgrade poetry
 
 POETRY := $(shell poetry -V 2>/dev/null)
 check-poetry :
@@ -26,7 +26,7 @@ build : check-poetry
 PRE-COMMIT := $(shell pre-commit -V 2>/dev/null)
 check-pre-commit :
 ifndef PRE-COMMIT
-	make update
+	poetry add --dev pre-commit
 	pre-commit install
 else
 	$(info ${PROJECT_LOGO} is using ${PRE-COMMIT})
@@ -38,7 +38,7 @@ install : check-poetry check-pre-commit
 PYTEST := $(shell pytest -V 2>/dev/null 2>&1)
 check-pytest :
 ifndef PYTEST
-	make update
+	poetry add --dev pytest
 else
 	$(info ${PROJECT_LOGO} is using ${PYTEST})
 endif
@@ -49,7 +49,7 @@ test : check-poetry check-pytest
 JUPYTER := $(shell jupyter --version 2>/dev/null)
 check-jupyter :
 ifndef JUPYTER
-	make update
+	poetry add --dev jupyter
 else
 	$(info ${PROJECT_LOGO} is using ${JUPYTER})
 endif

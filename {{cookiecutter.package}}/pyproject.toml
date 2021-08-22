@@ -3,7 +3,7 @@ name = "{{cookiecutter.package}}"
 version = "{{cookiecutter.version}}"
 description = "{{cookiecutter.description}}"
 authors = ["{{cookiecutter.authors}}"]
-license = "{{cookiecutter.license"
+license = "{{cookiecutter.license}}"
 packages = [
     { include = "{{cookiecutter.package}}", from = "src/main/python" },
 ]
@@ -13,9 +13,6 @@ packages = [
 python = "{{cookiecutter.python_version}}"
 
 [tool.poetry.dev-dependencies]
-pytest = "^6.2.4"
-pre-commit = "^2.13.0"
-jupyter = "^1.0.0"
 
 [tool.poetry.scripts]
 
