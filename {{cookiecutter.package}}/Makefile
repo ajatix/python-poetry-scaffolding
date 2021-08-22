@@ -1,6 +1,11 @@
 PROJECT_LOGO = {{cookiecutter.logo}}
 
-all: update build install test requirements notebook
+all: update
+	make build
+	make install
+	make test
+	make requirements
+	make notebook
 
 install-poetry :
 	pip install --upgrade pip
