@@ -17,19 +17,19 @@ repos:
     hooks:
       - id: black
         name: Check if source code is formatted
-        exclude: src/main/python/bonsai/generated/
+        exclude: src/main/python/{{cookiecutter.package}}/generated/
   - repo: https://github.com/PyCQA/isort
     rev: 5.9.2
     hooks:
       - id: isort
         name: Check if import are optimized
-        exclude: src/main/python/bonsai/generated/
+        exclude: src/main/python/{{cookiecutter.package}}/generated/
   - repo: https://gitlab.com/pycqa/flake8
     rev: 3.9.2
     hooks:
       - id: flake8
         name: Check for source code smells
-        exclude: src/main/python/bonsai/generated/
+        exclude: src/main/python/{{cookiecutter.package}}/generated/
         args:
           - --ignore=E501
   - repo: https://github.com/pre-commit/mirrors-mypy
@@ -37,4 +37,4 @@ repos:
     hooks:
       - id: mypy
         name: Check for type errors in code
-        exclude: src/main/python/bonsai/generated/
+        exclude: src/main/python/{{cookiecutter.package}}/generated/
