@@ -1,0 +1,9 @@
+{
+  "python_version": "^3.6",
+  "package": "package",
+  "version": "0.1.0",
+  "description": "Package description",
+  "authors": "Ajay Viswanathan <ajay.viswanathan@gmail.com>",
+  "license": "MIT",
+  "logo": "🐍"
+}

@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "{{cookiecutter.package}}"
+version = "{{cookiecutter.version}}"
+description = "{{cookiecutter.description}}"
+authors = ["{{cookiecutter.authors}}"]
+license = "{{cookiecutter.license"
+packages = [
+    { include = "{{cookiecutter.package}}", from = "src/main/python" },
+]
+
+
+[tool.poetry.dependencies]
+python = "{{cookiecutter.python_version}}"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.4"
+pre-commit = "^2.13.0"
+jupyter = "^1.0.0"
+
+[tool.poetry.scripts]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
